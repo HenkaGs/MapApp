@@ -1,0 +1,949 @@
+{
+    "united states of america": {
+        "info": "The United States is a country primarily located in North America.",
+        "povertyPercentage": 18.0
+    },
+    "canada": {
+        "info": "Canada is the second-largest country in the world by land area.",
+        "povertyPercentage": 10.5,
+        "year": null
+    },
+    "brazil": {
+        "info": "Brazil is the largest country in both South America and Latin America.",
+        "povertyPercentage": null,
+        "year": null
+    },
+    "india": {
+        "info": "India is the seventh-largest country by land area and the most populous democracy in the world.",
+        "povertyPercentage": 21.9,
+        "year": 2011
+    },
+    "china": {
+        "info": "China is the world's most populous country, with over 1.4 billion people."
+    },
+    "russia": {
+        "info": "Russia is the largest country in the world, spanning Eastern Europe and northern Asia.",
+        "povertyPercentage": 12.1,
+        "year": 2020
+    },
+    "australia": {
+        "info": "Australia is a country and continent surrounded by the Indian and Pacific oceans.",
+        "povertyPercentage": 12.6,
+        "year": null
+    },
+    "france": {
+        "info": "France, in Western Europe, is renowned for its culture, cuisine, and landmarks like the Eiffel Tower.",
+        "povertyPercentage": 15.6,
+        "year": 2021
+    },
+    "germany": {
+        "info": "Germany is known for its history, technology, and the Oktoberfest beer festival.",
+        "povertyPercentage": 14.7,
+        "year": 2021
+    },
+    "united kingdom": {
+        "info": "The United Kingdom is an island nation made up of England, Scotland, Wales, and Northern Ireland.",
+        "povertyPercentage": 18.6,
+        "year": 2017
+    },
+    "italy": {
+        "info": "Italy, in southern Europe, is known for its rich history, art, and cuisine, including pizza and pasta.",
+        "povertyPercentage": 20.1,
+        "year": 2021
+    },
+    "japan": {
+        "info": "Japan is an island country in East Asia, known for its technology, culture, and cherry blossoms."
+    },
+    "mexico": {
+        "info": "Mexico is a country in North America known for its vibrant culture, ancient ruins, and cuisine.",
+        "povertyPercentage": 36.3,
+        "year": 2022
+    },
+    "south africa": {
+        "info": "South Africa is known for its diverse landscapes, wildlife, and cultural heritage.",
+        "povertyPercentage": 55.5,
+        "year": 2014
+    },
+    "argentina": {
+        "info": "Argentina is known for tango music and dance, and its stunning Andes mountains.",
+        "povertyPercentage": 39.2,
+        "year": 2022
+    },
+    "nigeria": {
+        "info": "Nigeria is Africa's most populous country and a major economic and cultural powerhouse.",
+        "povertyPercentage": 40.1,
+        "year": 2018
+    },
+    "egypt": {
+        "info": "Egypt is famous for its ancient civilization and monuments like the Pyramids of Giza.",
+        "povertyPercentage": 29.7,
+        "year": 2019
+    },
+    "spain": {
+        "info": "Spain is known for its sunny beaches, cultural festivals, and historic cities.",
+        "povertyPercentage": 20.4,
+        "year": 2021
+    },
+    "south korea": {
+        "info": "South Korea is a tech-forward nation known for K-pop, technology, and traditional culture.",
+        "povertyPercentage": null,
+        "year": null
+    },
+    "north korea": {
+        "info": "South Korea is a tech-forward nation known for K-pop, technology, and traditional culture."
+    },
+    "saudi arabia": {
+        "info": "Saudi Arabia is known for its deserts, oil wealth, and the cities of Mecca and Medina."
+    },
+    "indonesia": {
+        "info": "Indonesia is the world's largest archipelago, known for its diverse cultures and biodiversity.",
+        "povertyPercentage": 9.5,
+        "year": 2022
+    },
+    "pakistan": {
+        "info": "Pakistan is known for its rich history, diverse landscapes, and cultural heritage.",
+        "povertyPercentage": 21.9,
+        "year": 2018
+    },
+    "bangladesh": {
+        "info": "Bangladesh is a South Asian country known for its rivers, culture, and textiles.",
+        "povertyPercentage": 18.7,
+        "year": 2022
+    },
+    "iran": {
+        "info": "Iran is known for its ancient Persian heritage and significant role in Middle Eastern geopolitics."
+    },
+    "iraq": {
+        "info": "Iran is known for its ancient Persian heritage and significant role in Middle Eastern geopolitics.",
+        "povertyPercentage": 18.9,
+        "year": 2012
+    },
+    "turkey": {
+        "info": "Turkey bridges Europe and Asia and is famous for its rich history and landmarks like Hagia Sophia.",
+        "povertyPercentage": 14.4,
+        "year": 2020
+    },
+    "thailand": {
+        "info": "Thailand is a Southeast Asian country known for its beaches, temples, and vibrant culture.",
+        "povertyPercentage": 6.3,
+        "year": 2021
+    },
+    "vietnam": {
+        "info": "Vietnam is known for its rich history, cuisine, and natural beauty like Halong Bay.",
+        "povertyPercentage": 4.8,
+        "year": 2020
+    },
+    "philippines": {
+        "info": "The Philippines is an archipelago in Southeast Asia known for its beaches and hospitality.",
+        "povertyPercentage": 18.1,
+        "year": 2021
+    },
+    "ethiopia": {
+        "info": "Ethiopia is one of the oldest nations in the world, with a rich cultural and historical heritage.",
+        "povertyPercentage": 23.5,
+        "year": 2015
+    },
+    "colombia": {
+        "info": "Colombia is a country in South America known for its coffee, culture, and biodiversity.",
+        "povertyPercentage": 39.3,
+        "year": 2021
+    },
+    "kenya": {
+        "info": "Kenya is famous for its wildlife safaris, national parks, and cultural heritage.",
+        "povertyPercentage": 36.1,
+        "year": 2015
+    },
+    "afghanistan": {
+        "info": "Afghanistan is a landlocked country in South Asia known for its rugged terrain and rich history.",
+        "povertyPercentage": 54.5,
+        "year": 2016
+    },
+    "albania": {
+        "info": "Albania is a small country in Southeast Europe known for its stunning Adriatic and Ionian coastlines.",
+        "povertyPercentage": 22.0,
+        "year": 2020
+    },
+    "algeria": {
+        "info": "Algeria is the largest country in Africa, known for its Sahara desert landscapes and Mediterranean coastline.",
+        "povertyPercentage": 5.5,
+        "year": 2011
+    },
+    "andorra": {
+        "info": "Andorra is a small, mountainous country between France and Spain, known for its ski resorts."
+    },
+    "angola": {
+        "info": "Angola is a country in Southern Africa with rich natural resources and a diverse culture.",
+        "povertyPercentage": 32.3,
+        "year": 2018
+    },
+    "antigua and barbuda": {
+        "info": "Antigua and Barbuda is a Caribbean nation known for its beaches and coral reefs."
+    },
+    "armenia": {
+        "info": "Armenia is a country in the South Caucasus region, known for its ancient Christian heritage.",
+        "povertyPercentage": 26.5,
+        "year": 2021
+    },
+    "austria": {
+        "info": "Austria is a landlocked country in Central Europe known for its Alpine scenery and classical music.",
+        "povertyPercentage": 14.8,
+        "year": 2021
+    },
+    "azerbaijan": {
+        "info": "Azerbaijan is known as the 'Land of Fire,' located at the crossroads of Europe and Asia.",
+        "povertyPercentage": 6.0,
+        "year": 2012
+    },
+    "bahamas": {
+        "info": "The Bahamas is an island nation in the Atlantic Ocean known for its beaches and vibrant marine life."
+    },
+    "bahrain": {
+        "info": "Bahrain is a small island nation in the Middle East, known for its pearl diving history and modern architecture."
+    },
+    "barbados": {
+        "info": "Barbados is a Caribbean island nation known for its beaches, music, and culture."
+    },
+    "belarus": {
+        "info": "Belarus is a landlocked country in Eastern Europe, known for its Soviet-era architecture and vast forests.",
+        "povertyPercentage": 4.8,
+        "year": 2020
+    },
+    "belgium": {
+        "info": "Belgium is known for its medieval towns, Renaissance architecture, and as the headquarters of the EU.",
+        "povertyPercentage": 13.2,
+        "year": 2021
+    },
+    "belize": {
+        "info": "Belize is a small country in Central America known for its barrier reef and Mayan ruins."
+    },
+    "benin": {
+        "info": "Benin is a West African country known for its role in the history of the Kingdom of Dahomey.",
+        "povertyPercentage": 38.5,
+        "year": 2018
+    },
+    "bhutan": {
+        "info": "Bhutan is a Himalayan kingdom known for its Gross National Happiness index and monasteries.",
+        "povertyPercentage": 12.4,
+        "year": 2022
+    },
+    "bolivia": {
+        "info": "Bolivia is a landlocked country in South America known for its high-altitude cities and salt flats.",
+        "povertyPercentage": 36.4,
+        "year": 2021
+    },
+    "bosnia and herz.": {
+        "info": "Bosnia and Herzegovina is a Balkan country known for its medieval villages and Ottoman-era heritage."
+    },
+    "botswana": {
+        "info": "Botswana is known for its wildlife safaris and the Okavango Delta.",
+        "povertyPercentage": 16.1,
+        "year": 2015
+    },
+    "brunei": {
+        "info": "Brunei is a small, wealthy nation on the island of Borneo in Southeast Asia."
+    },
+    "bulgaria": {
+        "info": "Bulgaria is a Balkan nation with a rich history, known for its mountains and Black Sea coastline.",
+        "povertyPercentage": 22.9,
+        "year": 2021
+    },
+    "burkina faso": {
+        "info": "Burkina Faso is a landlocked country in West Africa known for its cultural heritage and festivals.",
+        "povertyPercentage": 59.8,
+        "year": null
+    },
+    "burundi": {
+        "info": "Burundi is a small, landlocked country in East Africa known for its rolling hills and coffee production.",
+        "povertyPercentage": 64.9,
+        "year": 2013
+    },
+    "cambodia": {
+        "info": "Cambodia is home to the famous Angkor Wat temple complex and a rich cultural heritage.",
+        "povertyPercentage": 17.7,
+        "year": 2012
+    },
+    "cameroon": {
+        "info": "Cameroon is often called 'Africa in Miniature' for its diverse landscapes and cultures.",
+        "povertyPercentage": 37.5,
+        "year": 2014
+    },
+    "cape verde": {
+        "info": "Cape Verde is an island nation off the coast of West Africa, known for its Creole culture and music.",
+        "povertyPercentage": 35.2,
+        "year": 2015
+    },
+    "central african rep.": {
+        "info": "The Central African Republic is known for its wildlife and national parks."
+    },
+    "chad": {
+        "info": "Chad is a landlocked country in Central Africa with diverse landscapes and cultures.",
+        "povertyPercentage": 42.3,
+        "year": 2018
+    },
+    "chile": {
+        "info": "Chile is a long, narrow country in South America, known for the Andes mountains and Atacama Desert.",
+        "povertyPercentage": 10.8,
+        "year": 2020
+    },
+    "comoros": {
+        "info": "The Comoros is a volcanic archipelago off Africa's east coast, known for its beaches and marine life.",
+        "povertyPercentage": 42.4,
+        "year": 2013
+    },
+    "costa rica": {
+        "info": "Costa Rica is known for its biodiversity, rainforests, and eco-tourism.",
+        "povertyPercentage": 25.5,
+        "year": 2022
+    },
+    "croatia": {
+        "info": "Croatia is a Balkan country known for its Adriatic coastline and medieval towns.",
+        "povertyPercentage": 18.0,
+        "year": 2018
+    },
+    "cuba": {
+        "info": "Cuba is a Caribbean island nation known for its vibrant music, culture, and cigars."
+    },
+    "cyprus": {
+        "info": "Cyprus is an island nation in the Mediterranean, known for its ancient history and sunny beaches.",
+        "povertyPercentage": 13.9,
+        "year": 2021
+    },
+    "czechia": {
+        "info": "The Czech Republic, also known as Czechia, is known for its historic capital Prague and medieval castles."
+    },
+    "dem. rep. congo": {
+        "info": "The Democratic Republic of the Congo is a vast Central African country with abundant natural resources.",
+        "povertyPercentage": 78.94
+    },
+    "congo": {
+        "info": "The Democratic Republic of the Congo is a vast Central African country with abundant natural resources."
+    },
+    "denmark": {
+        "info": "Denmark is a Scandinavian country known for its design, Vikings, and happy citizens.",
+        "povertyPercentage": 12.4,
+        "year": 2021
+    },
+    "djibouti": {
+        "info": "Djibouti is a small country in the Horn of Africa known for its strategic location and unique landscapes.",
+        "povertyPercentage": 21.1,
+        "year": 2017
+    },
+    "dominican rep.": {
+        "info": "The Dominican Republic is a Caribbean nation known for its beaches, resorts, and music."
+    },
+    "puerto rico": {
+        "info": "The Dominican Republic is a Caribbean nation known for its beaches, resorts, and music."
+    },
+    "ecuador": {
+        "info": "Ecuador is known for its Gal\u00c3\u00a1pagos Islands, Andes mountains, and Amazon rainforest.",
+        "povertyPercentage": 25.2,
+        "year": 2022
+    },
+    "el salvador": {
+        "info": "El Salvador is the smallest country in Central America, known for its volcanoes and surf beaches.",
+        "povertyPercentage": 26.6,
+        "year": 2022
+    },
+    "equatorial guinea": {
+        "info": "Equatorial Guinea is a small Central African country with mainland and island regions.",
+        "povertyPercentage": 76.8,
+        "year": 2006
+    },
+    "eritrea": {
+        "info": "Eritrea is a Northeast African country on the Red Sea coast, known for its Italian colonial buildings."
+    },
+    "estonia": {
+        "info": "Estonia is a Baltic country known for its medieval capital Tallinn and digital innovation.",
+        "povertyPercentage": 22.8,
+        "year": 2021
+    },
+    "eswatini": {
+        "info": "Eswatini, formerly Swaziland, is known for its wilderness reserves and traditional Swazi culture.",
+        "povertyPercentage": 58.9,
+        "year": 2016
+    },
+    "fiji": {
+        "info": "Fiji is an island nation in the South Pacific, known for its beaches, reefs, and hospitality.",
+        "povertyPercentage": 24.1,
+        "year": 2019
+    },
+    "finland": {
+        "info": "Finland is a Northern European nation known for its lakes, forests, and the Northern Lights.",
+        "povertyPercentage": 12.7,
+        "year": 2021
+    },
+    "gabon": {
+        "info": "Gabon is a country along the Atlantic coast of Central Africa, known for its national parks.",
+        "povertyPercentage": 33.4,
+        "year": 2017
+    },
+    "gambia": {
+        "info": "The Gambia is a small West African country known for its beaches and the Gambia River.",
+        "povertyPercentage": 53.4,
+        "year": 2020
+    },
+    "georgia": {
+        "info": "Georgia is a country at the intersection of Europe and Asia, known for its Caucasus mountain villages.",
+        "povertyPercentage": 15.6,
+        "year": 2022
+    },
+    "ghana": {
+        "info": "Ghana is a West African nation known for its rich culture, history, and natural resources.",
+        "povertyPercentage": 23.4,
+        "year": 2016
+    },
+    "greece": {
+        "info": "Greece is known for its ancient ruins, stunning islands, and Mediterranean cuisine.",
+        "povertyPercentage": 18.8,
+        "year": 2021
+    },
+    "grenada": {
+        "info": "Grenada, also known as the Spice Isle, is a Caribbean country known for its nutmeg production."
+    },
+    "guatemala": {
+        "info": "Guatemala is a Central American country known for its Mayan heritage and volcanoes.",
+        "povertyPercentage": 59.3,
+        "year": 2014
+    },
+    "guinea": {
+        "info": "Guinea is a West African country known for its natural resources and diverse landscapes.",
+        "povertyPercentage": 43.7,
+        "year": 2018
+    },
+    "guinea-bissau": {
+        "info": "Guinea-Bissau is a West African country known for its national parks and wildlife."
+    },
+    "guyana": {
+        "info": "Guyana is a South American country known for its dense rainforests and British colonial architecture."
+    },
+    "haiti": {
+        "info": "Haiti is a Caribbean nation on the island of Hispaniola, known for its history and culture.",
+        "povertyPercentage": 58.5,
+        "year": 2012
+    },
+    "honduras": {
+        "info": "Honduras is a Central American country known for its Mayan ruins and beautiful beaches.",
+        "povertyPercentage": 48.0,
+        "year": 2019
+    },
+    "hungary": {
+        "info": "Hungary is a landlocked Central European country known for its capital, Budapest, and thermal baths.",
+        "povertyPercentage": 12.1,
+        "year": 2021
+    },
+    "iceland": {
+        "info": "Iceland is a Nordic island country known for its volcanoes, geysers, and hot springs.",
+        "povertyPercentage": 8.8,
+        "year": 2017
+    },
+    "greenland": {
+        "info": "Iceland is a Nordic island country known for its volcanoes, geysers, and hot springs."
+    },
+    "ireland": {
+        "info": "Ireland is an island nation in Europe known for its green landscapes and rich history.",
+        "povertyPercentage": 14.0,
+        "year": 2021
+    },
+    "antarctica": {
+        "info": "Iceland is a Nordic island country known for its volcanoes, geysers, and hot springs."
+    },
+    "israel": {
+        "info": "Israel is a Middle Eastern country on the Mediterranean Sea, significant in world history and religion.",
+        "povertyPercentage": 16.9,
+        "year": null
+    },
+    "jamaica": {
+        "info": "Jamaica is a Caribbean island nation known for its reggae music and beautiful beaches.",
+        "povertyPercentage": 19.9,
+        "year": 2012
+    },
+    "jordan": {
+        "info": "Jordan is a Middle Eastern country known for its ancient city of Petra and the Dead Sea.",
+        "povertyPercentage": 15.7,
+        "year": 2018
+    },
+    "kazakhstan": {
+        "info": "Kazakhstan is a Central Asian country known for its vast steppes and modern capital, Astana.",
+        "povertyPercentage": 5.2,
+        "year": 2022
+    },
+    "kiribati": {
+        "info": "Kiribati is a remote Pacific island nation known for its marine life and atolls.",
+        "povertyPercentage": 21.9,
+        "year": 2019
+    },
+    "kosovo": {
+        "info": "Kosovo is a partially recognized country in the Balkans known for its cultural heritage."
+    },
+    "kuwait": {
+        "info": "Kuwait is a small Middle Eastern country known for its oil wealth and modern architecture."
+    },
+    "kyrgyzstan": {
+        "info": "Kyrgyzstan is a Central Asian country known for its mountains and nomadic traditions.",
+        "povertyPercentage": 33.3,
+        "year": 2021
+    },
+    "laos": {
+        "info": "Laos is a Southeast Asian country known for its mountainous terrain and Buddhist monasteries.",
+        "povertyPercentage": 18.3,
+        "year": 2018
+    },
+    "latvia": {
+        "info": "Latvia is a Baltic nation known for its forests, beaches, and medieval architecture in Riga.",
+        "povertyPercentage": 22.5,
+        "year": 2021
+    },
+    "lebanon": {
+        "info": "Lebanon is a Middle Eastern country known for its cedar trees, history, and Mediterranean cuisine.",
+        "povertyPercentage": 27.4,
+        "year": 2011
+    },
+    "lesotho": {
+        "info": "Lesotho is a high-altitude, landlocked country encircled by South Africa.",
+        "povertyPercentage": 49.7,
+        "year": 2017
+    },
+    "liberia": {
+        "info": "Liberia is a West African country known for its history as a nation founded by freed slaves.",
+        "povertyPercentage": 50.9,
+        "year": 2016
+    },
+    "libya": {
+        "info": "Libya is a North African country known for its deserts and ancient Roman ruins."
+    },
+    "liechtenstein": {
+        "info": "Liechtenstein is a tiny, doubly landlocked Alpine country in Central Europe."
+    },
+    "lithuania": {
+        "info": "Lithuania is a Baltic country known for its medieval Old Towns and Hill of Crosses.",
+        "povertyPercentage": 20.9,
+        "year": 2021
+    },
+    "luxembourg": {
+        "info": "Luxembourg is a small, wealthy European country known for its castles and banking industry.",
+        "povertyPercentage": 17.4,
+        "year": 2021
+    },
+    "madagascar": {
+        "info": "Madagascar is an island nation known for its unique wildlife and biodiversity.",
+        "povertyPercentage": 70.7,
+        "year": 2012
+    },
+    "malawi": {
+        "info": "Malawi is a landlocked country in southeastern Africa known for Lake Malawi.",
+        "povertyPercentage": 50.7,
+        "year": 2019
+    },
+    "malaysia": {
+        "info": "Malaysia is a Southeast Asian country known for its rainforests and modern capital, Kuala Lumpur.",
+        "povertyPercentage": 6.2,
+        "year": 2021
+    },
+    "maldives": {
+        "info": "The Maldives is a tropical paradise in the Indian Ocean known for its beaches and coral reefs.",
+        "povertyPercentage": 5.4,
+        "year": 2019
+    },
+    "mali": {
+        "info": "Mali is a landlocked country in West Africa known for its ancient cities like Timbuktu.",
+        "povertyPercentage": 44.6,
+        "year": 2021
+    },
+    "malta": {
+        "info": "Malta is a Mediterranean island nation known for its historic sites and sunny weather.",
+        "povertyPercentage": 16.7,
+        "year": 2021
+    },
+    "marshall islands": {
+        "info": "The Marshall Islands is an island nation in the Pacific known for its atolls and marine life.",
+        "povertyPercentage": 7.2,
+        "year": 2019
+    },
+    "mauritania": {
+        "info": "Mauritania is a country in West Africa known for its vast deserts and Atlantic coastline.",
+        "povertyPercentage": 31.8,
+        "year": 2019
+    },
+    "mauritius": {
+        "info": "Mauritius is an island nation in the Indian Ocean known for its beaches and lagoons.",
+        "povertyPercentage": 10.3,
+        "year": 2017
+    },
+    "micronesia": {
+        "info": "Micronesia is a Pacific island nation known for its coral reefs and ancient ruins.",
+        "povertyPercentage": 41.2,
+        "year": 2013
+    },
+    "moldova": {
+        "info": "Moldova is a small Eastern European country known for its wine and rolling hills."
+    },
+    "monaco": {
+        "info": "Monaco is a tiny, wealthy city-state on the French Riviera known for its casinos and Grand Prix."
+    },
+    "mongolia": {
+        "info": "Mongolia is a landlocked country in East Asia known for its vast steppes and nomadic culture.",
+        "povertyPercentage": 27.8,
+        "year": 2020
+    },
+    "montenegro": {
+        "info": "Montenegro is a Balkan country known for its mountains and medieval villages.",
+        "povertyPercentage": 21.2,
+        "year": 2020
+    },
+    "morocco": {
+        "info": "Morocco is a North African country known for its markets, historic cities, and desert landscapes.",
+        "povertyPercentage": 4.8,
+        "year": 2013
+    },
+    "mozambique": {
+        "info": "Mozambique is a southern African country known for its Indian Ocean coastline and marine parks.",
+        "povertyPercentage": 46.1,
+        "year": 2014
+    },
+    "myanmar": {
+        "info": "Myanmar, formerly Burma, is known for its Buddhist temples and ancient cities like Bagan.",
+        "povertyPercentage": 24.8,
+        "year": 2017
+    },
+    "namibia": {
+        "info": "Namibia is a southern African country known for its Namib Desert and wildlife.",
+        "povertyPercentage": 17.4,
+        "year": 2015
+    },
+    "nauru": {
+        "info": "Nauru is a tiny island nation in the Pacific known for its phosphate mining."
+    },
+    "nepal": {
+        "info": "Nepal is a Himalayan country known for Mount Everest and its Buddhist monasteries.",
+        "povertyPercentage": 25.2,
+        "year": 2010
+    },
+    "netherlands": {
+        "info": "The Netherlands is known for its windmills, tulips, and canals in Amsterdam.",
+        "povertyPercentage": 14.5,
+        "year": 2021
+    },
+    "new zealand": {
+        "info": "New Zealand is a Pacific island nation known for its landscapes and Maori culture."
+    },
+    "nicaragua": {
+        "info": "Nicaragua is a Central American country known for its lakes, volcanoes, and colonial cities.",
+        "povertyPercentage": 24.9,
+        "year": 2016
+    },
+    "niger": {
+        "info": "Niger is a landlocked West African country known for its Sahara desert and historic trading routes.",
+        "povertyPercentage": 40.8,
+        "year": 2018
+    },
+    "w. sahara": {
+        "info": "Niger is a landlocked West African country known for its Sahara desert and historic trading routes."
+    },
+    "macedonia": {
+        "info": "North Macedonia is a Balkan country known for its lakes, mountains, and historic sites."
+    },
+    "norway": {
+        "info": "Norway is a Nordic country known for its fjords, northern lights, and Viking history.",
+        "povertyPercentage": 12.7,
+        "year": 2019
+    },
+    "oman": {
+        "info": "Oman is a Middle Eastern country known for its deserts, forts, and Arabian Sea coastline."
+    },
+    "palau": {
+        "info": "Palau is a Pacific island nation known for its coral reefs and diving spots.",
+        "povertyPercentage": 24.9,
+        "year": 2006
+    },
+    "panama": {
+        "info": "Panama is a Central American country known for its canal connecting the Atlantic and Pacific.",
+        "povertyPercentage": 21.5,
+        "year": 2019
+    },
+    "papua new guinea": {
+        "info": "Papua New Guinea is a Pacific nation known for its cultural diversity and rainforests.",
+        "povertyPercentage": 39.9,
+        "year": 2009
+    },
+    "paraguay": {
+        "info": "Paraguay is a landlocked South American country known for its rivers and colonial history.",
+        "povertyPercentage": 24.7,
+        "year": 2022
+    },
+    "peru": {
+        "info": "Peru is a South American country known for its Incan heritage and Machu Picchu.",
+        "povertyPercentage": 27.5,
+        "year": 2022
+    },
+    "poland": {
+        "info": "Poland is a Central European country known for its medieval architecture and vibrant cities like Warsaw.",
+        "povertyPercentage": 11.8,
+        "year": 2022
+    },
+    "portugal": {
+        "info": "Portugal is a southern European country known for its Atlantic coastline and rich history.",
+        "povertyPercentage": 16.4,
+        "year": 2021
+    },
+    "qatar": {
+        "info": "Qatar is a small, wealthy Gulf nation known for its oil wealth and modern skyline in Doha."
+    },
+    "romania": {
+        "info": "Romania is known for its medieval castles and the Carpathian mountains.",
+        "povertyPercentage": 21.2,
+        "year": 2021
+    },
+    "rwanda": {
+        "info": "Rwanda is a small African country known for its mountain gorillas and green landscapes.",
+        "povertyPercentage": 38.2,
+        "year": 2016
+    },
+    "san marino": {
+        "info": "San Marino is one of the world's smallest countries, located within Italy."
+    },
+    "c\u00c3\u00b4te d'ivoire": {
+        "info": "San Marino is one of the world's smallest countries, located within Italy."
+    },
+    "sao tome and principe": {
+        "info": "S\u00c3\u00a3o Tom\u00c3\u00a9 and Pr\u00c3\u00adncipe is a small island nation in the Gulf of Guinea, known for its cocoa production.",
+        "povertyPercentage": 55.5,
+        "year": 2018
+    },
+    "senegal": {
+        "info": "Senegal is a West African country known for its vibrant culture and historic sites.",
+        "povertyPercentage": 46.7,
+        "year": 2011
+    },
+    "serbia": {
+        "info": "Serbia is a Balkan country known for its history, mountains, and medieval monasteries.",
+        "povertyPercentage": 21.2,
+        "year": 2020
+    },
+    "seychelles": {
+        "info": "The Seychelles is an Indian Ocean archipelago known for its beaches and coral reefs.",
+        "povertyPercentage": 25.3,
+        "year": 2018
+    },
+    "sierra leone": {
+        "info": "Sierra Leone is a West African country known for its beaches and history of diamond mining.",
+        "povertyPercentage": 56.8,
+        "year": 2018
+    },
+    "singapore": {
+        "info": "Singapore is a global financial hub and city-state known for its cleanliness and efficiency."
+    },
+    "slovakia": {
+        "info": "Slovakia is a landlocked Central European country known for its castles and mountains.",
+        "povertyPercentage": 13.7,
+        "year": 2021
+    },
+    "slovenia": {
+        "info": "Slovenia is a small European country known for its mountains, ski resorts, and lakes.",
+        "povertyPercentage": 12.1,
+        "year": 2021
+    },
+    "solomon islands": {
+        "info": "The Solomon Islands is a Pacific nation known for its World War II history and coral reefs.",
+        "povertyPercentage": 12.7,
+        "year": 2020
+    },
+    "somalia": {
+        "info": "Somalia is a country in the Horn of Africa with a long coastline along the Indian Ocean.",
+        "povertyPercentage": 54.4,
+        "year": 2022
+    },
+    "sri lanka": {
+        "info": "Sri Lanka is an island nation south of India, known for its tea, beaches, and ancient ruins.",
+        "povertyPercentage": 14.3,
+        "year": 2019
+    },
+    "sudan": {
+        "info": "Sudan is a country in Northeast Africa known for its deserts and ancient pyramids.",
+        "povertyPercentage": 46.5,
+        "year": 2009
+    },
+    "s. sudan": {
+        "info": "Sudan is a country in Northeast Africa known for its deserts and ancient pyramids."
+    },
+    "suriname": {
+        "info": "Suriname is a small South American country known for its rainforests and Dutch colonial history."
+    },
+    "sweden": {
+        "info": "Sweden is a Scandinavian country known for its forests, lakes, and high standard of living.",
+        "povertyPercentage": 16.0,
+        "year": 2021
+    },
+    "switzerland": {
+        "info": "Switzerland is a mountainous Central European country known for its neutrality and banking.",
+        "povertyPercentage": 14.7,
+        "year": 2020
+    },
+    "syria": {
+        "info": "Syria is a Middle Eastern country with a rich history and ancient cities like Damascus.",
+        "povertyPercentage": 35.2,
+        "year": 2007
+    },
+    "tajikistan": {
+        "info": "Tajikistan is a Central Asian country known for its mountains and Silk Road history.",
+        "povertyPercentage": 22.5,
+        "year": 2022
+    },
+    "tanzania": {
+        "info": "Tanzania is an East African country known for Mount Kilimanjaro and Serengeti National Park.",
+        "povertyPercentage": 26.4,
+        "year": 2018
+    },
+    "taiwan": {
+        "info": "Tanzania is an East African country known for Mount Kilimanjaro and Serengeti National Park."
+    },
+    "timor-leste": {
+        "info": "Timor-Leste is a Southeast Asian country known for its rugged mountains and coral reefs."
+    },
+    "togo": {
+        "info": "Togo is a small West African country known for its palm-lined beaches and coffee production.",
+        "povertyPercentage": 45.5,
+        "year": 2018
+    },
+    "tonga": {
+        "info": "Tonga is a Polynesian kingdom of more than 170 islands in the Pacific Ocean.",
+        "povertyPercentage": 22.5,
+        "year": 2009
+    },
+    "trinidad and tobago": {
+        "info": "Trinidad and Tobago is a Caribbean nation known for its Carnival and calypso music."
+    },
+    "tunisia": {
+        "info": "Tunisia is a North African country known for its Mediterranean coastline and ancient ruins.",
+        "povertyPercentage": 16.6,
+        "year": 2021
+    },
+    "turkmenistan": {
+        "info": "Turkmenistan is a Central Asian country known for its vast deserts and marble architecture."
+    },
+    "tuvalu": {
+        "info": "Tuvalu is a tiny Pacific island nation known for its low-lying atolls and lagoons.",
+        "povertyPercentage": 26.3,
+        "year": 2010
+    },
+    "uganda": {
+        "info": "Uganda is an East African country known for its wildlife and Lake Victoria.",
+        "povertyPercentage": 20.3,
+        "year": 2019
+    },
+    "ukraine": {
+        "info": "Ukraine is a large Eastern European country known for its fertile plains and rich history.",
+        "povertyPercentage": 1.6,
+        "year": 2020
+    },
+    "united arab emirates": {
+        "info": "The UAE is a Middle Eastern federation known for its modern cities like Dubai and Abu Dhabi."
+    },
+    "uruguay": {
+        "info": "Uruguay is a South American country known for its beaches and laid-back lifestyle.",
+        "povertyPercentage": 9.9,
+        "year": 2022
+    },
+    "uzbekistan": {
+        "info": "Uzbekistan is a Central Asian country known for its Silk Road cities like Samarkand.",
+        "povertyPercentage": 14.1,
+        "year": 2013
+    },
+    "vanuatu": {
+        "info": "Vanuatu is a Pacific island nation known for its scuba diving and active volcanoes.",
+        "povertyPercentage": 15.9,
+        "year": 2019
+    },
+    "vatican city": {
+        "info": "Vatican City is the smallest country in the world and the spiritual center of the Catholic Church."
+    },
+    "venezuela": {
+        "info": "Venezuela is a South American country known for its oil resources and Angel Falls.",
+        "povertyPercentage": 33.1,
+        "year": 2015
+    },
+    "yemen": {
+        "info": "Yemen is a Middle Eastern country known for its historic cities and ancient architecture.",
+        "povertyPercentage": 48.6,
+        "year": 2014
+    },
+    "zambia": {
+        "info": "Zambia is a southern African country known for its Victoria Falls and wildlife safaris.",
+        "povertyPercentage": 54.4,
+        "year": 2015
+    },
+    "zimbabwe": {
+        "info": "Zimbabwe is a southern African country known for its landscapes and ancient ruins like Great Zimbabwe.",
+        "povertyPercentage": 38.3,
+        "year": 2019
+    },
+    "south sudan": {
+        "info": "No additional info available.",
+        "povertyPercentage": 82.3,
+        "year": 2016
+    },
+    "guinea bissau": {
+        "info": "No additional info available.",
+        "povertyPercentage": 47.7,
+        "year": 2018
+    },
+    "ivory coast": {
+        "info": "No additional info available.",
+        "povertyPercentage": 39.5,
+        "year": 2018
+    },
+    "united states": {
+        "info": "No additional info available.",
+        "povertyPercentage": 18.0,
+        "year": null
+    },
+    "palestine": {
+        "info": "No additional info available.",
+        "povertyPercentage": null,
+        "year": null
+    },
+    "saint lucia": {
+        "info": "No additional info available.",
+        "povertyPercentage": 25.0,
+        "year": 2016
+    },
+    "north macedonia": {
+        "info": "No additional info available.",
+        "povertyPercentage": 21.8,
+        "year": 2019
+    },
+    "czech republic": {
+        "info": "No additional info available.",
+        "povertyPercentage": 10.2,
+        "year": 2021
+    },
+    "dr congo": {
+        "info": "No additional info available.",
+        "povertyPercentage": 63.9,
+        "year": 2012
+    },
+    "republic of the congo": {
+        "info": "No additional info available.",
+        "povertyPercentage": 40.9,
+        "year": 2011
+    },
+    "central african republic": {
+        "info": "No additional info available.",
+        "povertyPercentage": 68.8,
+        "year": 2021
+    },
+    "bosnia and herzegovina": {
+        "info": "No additional info available.",
+        "povertyPercentage": 16.9,
+        "year": 2015
+    },
+    "timor leste": {
+        "info": "No additional info available.",
+        "povertyPercentage": 41.8,
+        "year": 2014
+    },
+    "samoa": {
+        "info": "No additional info available.",
+        "povertyPercentage": 21.9,
+        "year": 2018
+    }
+}
