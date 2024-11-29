@@ -6,6 +6,7 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 export default function MapChart() {
   const [tooltipContent, setTooltipContent] = useState("");
+  const [hoverTooltip, setHoverTooltip] = useState({ content: "", x: 0, y: 0 });
 
   const getCountryStyle = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
@@ -20,10 +21,13 @@ export default function MapChart() {
 
   const Headline = () => (
     <div style={{ textAlign: "center", marginBottom: "20px" }}>
-      <h1>Share of Population Living in Extreme Poverty, 2023</h1>
+      <h1>Poverty Rate by Country</h1>
       <p style={{ fontSize: "14px", color: "#555" }}>
-        Extreme poverty is defined as living below the International Poverty Line of $2.15 per day. This data is adjusted for inflation and cost of living differences between countries.
-      </p>
+      Poverty Rate is measured as the percentage of the population living below the national poverty line(s). National estimates are based on population-weighted subgroup estimates from household surveys.</p>
+      <p style={{ fontSize: "14px", color: "#555" }}> 
+      The World Bank updated the global poverty lines in September 2022. The decision, announced in May, followed the release in 2020 of new purchasing power parities (PPPs)—the main data used to convert different currencies into a common, comparable unit and account for price differences across countries. The new extreme poverty line became $2.15 per person per day, replacing the previous value of $1.90, which was based on 2017 PPPs.</p>
+      <p style={{ fontSize: "14px", color: "#555" }}> 
+      Poverty rates for Australia, Canada, Israel, and the United States were computed from OECD data for 2022 or the latest available year. All other countries' rates courtesy of World Bank.</p>
     </div>
   );
 
@@ -98,10 +102,11 @@ export default function MapChart() {
     const countryData = countriesInfo[countryName];
     console.log(geo.properties);
     if (countryData) {
+      const { povertyPercentage, year, info } = countryData; // Destructure the necessary fields
       setTooltipContent(
-        `Info about ${geo.properties.name}: ${countryData.info} (Poverty: ${
-          countryData.povertyPercentage || "No data"
-        }%)`
+        `Info about ${geo.properties.name}:\n
+         Poverty Rate: ${povertyPercentage || "No data"}% (${year || "Year not available"})\n
+         ${info || ""}`
       );
     } else {
       setTooltipContent(`Info about ${geo.properties.name}: No data available.`);
@@ -121,6 +126,14 @@ export default function MapChart() {
               <Geography
                 key={geo.rsmKey}
                 geography={geo}
+                onMouseEnter={(e) => {
+                  const countryName = geo.properties.name;
+                  setHoverTooltip({ content: countryName, x: e.pageX, y: e.pageY });
+                }}
+                onMouseMove={(e) => {
+                  setHoverTooltip((prev) => ({ ...prev, x: e.pageX, y: e.pageY }));
+                }}
+                onMouseLeave={() => setHoverTooltip({ content: "", x: 0, y: 0 })}
                 onClick={() => handleCountryClick(geo)}
                 style={getCountryStyle(geo)}
               />
@@ -129,7 +142,25 @@ export default function MapChart() {
         </Geographies>
       </ComposableMap>
 
+      {/* Tooltip */}
       <div>{tooltipContent}</div>
+      <div
+        style={{
+          position: "absolute",
+          top: hoverTooltip.y + 10,
+          left: hoverTooltip.x + 10,
+          background: "rgba(0, 0, 0, 0.75)",
+          color: "#fff",
+          padding: "5px 10px",
+          borderRadius: "5px",
+          pointerEvents: "none",
+          fontSize: "12px",
+          display: hoverTooltip.content ? "block" : "none",
+          zIndex: 1000,
+        }}
+      >
+        {hoverTooltip.content}
+      </div>
 
       {/* Legend */}
       <Legend />
