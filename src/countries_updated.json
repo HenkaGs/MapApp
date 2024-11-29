@@ -1,7 +1,34 @@
 {
     "united states of america": {
-        "info": "The United States is a country primarily located in North America.",
-        "povertyPercentage": 18.0
+        "info": "Absolute Poverty Absolute poverty refers to the lack of resources to meet basic needs such as food, shelter, and clothing. In 2023, approximately 11.1% of the U.S. population lived below the official poverty line, which equates to about 36.8 million people. STATISTA Relative Poverty Relative poverty assesses an individual's economic status compared to the broader society. The U.S. has one of the highest relative poverty rates among developed nations, indicating significant income inequality. WIKIPEDIA Causes of Poverty Several factors contribute to poverty in the U.S.: Economic Inequality: The concentration of wealth among the top earners leaves limited resources for the rest, exacerbating poverty levels. WIKIPEDIA Labor Market Dynamics: The prevalence of low-wage jobs without benefits makes it challenging for many to rise above poverty. Social Policies: Insufficient social safety nets and welfare programs fail to adequately support those in need. Systemic Issues: Historical and systemic discrimination, such as redlining, have long-term effects on economic opportunities for marginalized communities. WIKIPEDIA Trends and Future Outlook Poverty rates in the U.S. have fluctuated over time. Notably, the child poverty rate more than doubled from 5.2% in 2021 to 12.4% in 2022, largely due to the expiration of pandemic-related benefits. ECONOFACT While certain economic indicators, like household incomes, have shown improvement, the benefits are unevenly distributed, and income inequality persists. REUTERS Addressing poverty in the U.S. requires comprehensive policy reforms aimed at reducing income inequality, enhancing social safety nets, and tackling systemic issues that perpetuate economic disparities.",
+        "povertyPercentage": 18.0,
+        "year": null,
+        "references": [
+            {
+              "title": "Poverty rate U.S. 1990-2023 - Statista",
+              "url": "https://www.statista.com/statistics/200463/us-poverty-rate-since-1990/?utm_source=chatgpt.com"
+            },
+            {
+                "title": "Income inequality in the United States - Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Income_inequality_in_the_United_States?utm_source=chatgpt.com"
+            },
+            {
+                "title": "Theories of Poverty - Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Theories_of_poverty?utm_source=chatgpt.com"
+            },
+            {
+                "title": "Poverty in the U.S.: Causes, Consequences, and the Role of Policy - Econofact",
+                "url": "https://econofact.org/podcast/poverty-in-the-u-s-causes-consequences-and-the-role-of-policy?utm_source=chatgpt.com"
+            },
+            {
+                "title": "America keeps choosing poverty - but it doesn't have to - Vox",
+                "url": "https://www.vox.com/policy/374488/ending-poverty-america-policy-choice?utm_source=chatgpt.com"
+            },
+            {
+                "title": "US incomes rose last year but poverty rates changed little, Census data shows - Reuters",
+                "url": "https://www.reuters.com/markets/us/us-inflation-adjusted-income-rose-2023-while-poverty-rate-edged-up-census-data-2024-09-10/?utm_source=chatgpt.com"
+            }
+        ]
     },
     "canada": {
         "info": "Canada is the second-largest country in the world by land area.",

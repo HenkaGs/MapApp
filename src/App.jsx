@@ -7,6 +7,7 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 export default function MapChart() {
   const [tooltipContent, setTooltipContent] = useState("");
   const [hoverTooltip, setHoverTooltip] = useState({ content: "", x: 0, y: 0 });
+  const [references, setReferences] = useState([]);
 
   const getCountryStyle = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
@@ -45,7 +46,7 @@ export default function MapChart() {
   
 
   const getCountryColor = (povertyPercentage) => {
-    if (povertyPercentage === undefined || povertyPercentage === 0.0) return "#d9d9d9"; // No data or 0.0
+    if (povertyPercentage === undefined || povertyPercentage === null) return "#d9d9d9"; // No data or 0.0
     if (povertyPercentage <= 5) return "#ffffcc";
     if (povertyPercentage <= 10) return "#ffeda0";
     if (povertyPercentage <= 15) return "#fed976";
@@ -69,49 +70,65 @@ export default function MapChart() {
   };
 
   const Legend = () => (
-    <div style={{ padding: "10px" }}>
-      <h4>Poverty Levels (5% Increments)</h4>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
-        <li style={{ color: "#ffffcc" }}>0% - 5%</li>
-        <li style={{ color: "#ffeda0" }}>5% - 10%</li>
-        <li style={{ color: "#fed976" }}>10% - 15%</li>
-        <li style={{ color: "#feb24c" }}>15% - 20%</li>
-        <li style={{ color: "#fd8d3c" }}>20% - 25%</li>
-        <li style={{ color: "#fc4e2a" }}>25% - 30%</li>
-        <li style={{ color: "#e31a1c" }}>30% - 35%</li>
-        <li style={{ color: "#bd0026" }}>35% - 40%</li>
-        <li style={{ color: "#800026" }}>40% - 45%</li>
-        <li style={{ color: "#4d0000" }}>45% - 50%</li>
-        <li style={{ color: "#3d0000" }}>50% - 55%</li>
-        <li style={{ color: "#2e0000" }}>55% - 60%</li>
-        <li style={{ color: "#1e0000" }}>60% - 65%</li>
-        <li style={{ color: "#110000" }}>65% - 70%</li>
-        <li style={{ color: "#0b0000" }}>70% - 75%</li>
-        <li style={{ color: "#050000" }}>75% - 80%</li>
-        <li style={{ color: "#040000" }}>80% - 85%</li>
-        <li style={{ color: "#030000" }}>85% - 90%</li>
-        <li style={{ color: "#020000" }}>90% - 95%</li>
-        <li style={{ color: "#010000" }}>95% - 100%</li>
-        <li style={{ color: "#d9d9d9" }}>No Data</li>
-      </ul>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
+      <h4 style={{ marginRight: "10px" }}>Poverty Levels:</h4>
+      <div style={{ display: "flex", gap: "5px" }}>
+        <div style={{ background: "#ffffcc", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>5%</span>
+        </div>
+        <div style={{ background: "#ffeda0", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>10%</span>
+        </div>
+        <div style={{ background: "#fed976", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>15%</span>
+        </div>
+        <div style={{ background: "#feb24c", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>20%</span>
+        </div>
+        <div style={{ background: "#fd8d3c", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>25%</span>
+        </div>
+        <div style={{ background: "#fc4e2a", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>30%</span>
+        </div>
+        <div style={{ background: "#e31a1c", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>35%</span>
+        </div>
+        <div style={{ background: "#bd0026", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>40%</span>
+        </div>
+        <div style={{ background: "#800026", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>45%</span>
+        </div>
+        <div style={{ background: "#4d0000", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>50%</span>
+        </div>
+        <div style={{ background: "#d9d9d9", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold" }}>No</span>
+        </div>
+      </div>
     </div>
   );
+  
 
   const handleCountryClick = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
     const countryData = countriesInfo[countryName];
     console.log(geo.properties);
     if (countryData) {
-      const { povertyPercentage, year, info } = countryData; // Destructure the necessary fields
+      const { povertyPercentage, year, info, references: countryReferences } = countryData;
       setTooltipContent(
         `Info about ${geo.properties.name}:\n
          Poverty Rate: ${povertyPercentage || "No data"}% (${year || "Year not available"})\n
          ${info || ""}`
       );
+      setReferences(countryReferences || []);
     } else {
       setTooltipContent(`Info about ${geo.properties.name}: No data available.`);
+      setReferences([]);
     }
   };
+  
 
   return (
     <div style={{ width: "100%", maxWidth: "900px", margin: "0 auto" }}>
@@ -160,6 +177,23 @@ export default function MapChart() {
         }}
       >
         {hoverTooltip.content}
+      </div>
+
+      <div>
+        {references.length > 0 && (
+          <div style={{ marginTop: "20px" }}>
+            <h4>References</h4>
+            <ul>
+              {references.map((ref, index) => (
+                <li key={index}>
+                  <a href={ref.url} target="_blank" rel="noopener noreferrer">
+                    {ref.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
       {/* Legend */}
