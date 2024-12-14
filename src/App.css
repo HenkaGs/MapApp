@@ -2,3 +2,34 @@ svg {
   display: block;
   margin: 0 auto;
 }
+#yearSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+#yearSlider:hover {
+  opacity: 1;
+}
+
+#yearSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#yearSlider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #4CAF50;
+  cursor: pointer;
+  border-radius: 50%;
+}

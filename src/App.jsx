@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
-import countriesInfo from "./countries_updated.json";
+import countriesInfo from "./countriesInfoNewest2.json";
+import "./App.css";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
 export default function MapChart() {
+  const [year, setYear] = useState(2024);
   const [tooltipContent, setTooltipContent] = useState("");
   const [hoverTooltip, setHoverTooltip] = useState({ content: "", x: 0, y: 0 });
   const [references, setReferences] = useState([]);
@@ -12,7 +14,8 @@ export default function MapChart() {
   const getCountryStyle = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
     const countryData = countriesInfo[countryName];
-    const color = countryData ? getCountryColor(countryData.povertyPercentage) : "#d9d9d9";
+    const povertyRate = countryData?.[year];
+    const color = povertyRate !== null && povertyRate !== undefined ? getCountryColor(povertyRate) : "#d9d9d9";
     return {
       default: { fill: color, outline: "black", stroke: "black", strokeWidth: 0.5 },
       hover: { fill: "#666666", outline: "black", stroke: "black", strokeWidth: 1 },
@@ -24,18 +27,15 @@ export default function MapChart() {
     <div style={{ textAlign: "center", marginBottom: "20px" }}>
       <h1>Poverty Rate by Country</h1>
       <p style={{ fontSize: "14px", color: "#555" }}>
-      Poverty Rate is measured as the percentage of the population living below the national poverty line(s). National estimates are based on population-weighted subgroup estimates from household surveys.</p>
-      <p style={{ fontSize: "14px", color: "#555" }}> 
-      The World Bank updated the global poverty lines in September 2022. The decision, announced in May, followed the release in 2020 of new purchasing power parities (PPPs)—the main data used to convert different currencies into a common, comparable unit and account for price differences across countries. The new extreme poverty line became $2.15 per person per day, replacing the previous value of $1.90, which was based on 2017 PPPs.</p>
-      <p style={{ fontSize: "14px", color: "#555" }}> 
-      Poverty rates for Australia, Canada, Israel, and the United States were computed from OECD data for 2022 or the latest available year. All other countries' rates courtesy of World Bank.</p>
+      Extreme poverty is defined as living below the International Poverty Line of $2.15 per day. This data is adjusted for inflation and for differences in the cost of living between countries.
+      </p>
     </div>
   );
 
   const Reference = () => (
     <div style={{ marginTop: "20px", textAlign: "center", fontSize: "12px", color: "#555" }}>
       <p>
-        Data Source: <a href="https://worldpopulationreview.com/country-rankings/poverty-rate-by-country" target="_blank" rel="noopener noreferrer">https://worldpopulationreview.com/country-rankings/poverty-rate-by-country</a>
+        Data Source: <a href="https://ourworldindata.org/poverty" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/poverty</a>
       </p>
       <p>
         Note: 
@@ -46,88 +46,127 @@ export default function MapChart() {
   
 
   const getCountryColor = (povertyPercentage) => {
-    if (povertyPercentage === undefined || povertyPercentage === null) return "#d9d9d9"; // No data or 0.0
-    if (povertyPercentage <= 5) return "#ffffcc";
-    if (povertyPercentage <= 10) return "#ffeda0";
-    if (povertyPercentage <= 15) return "#fed976";
-    if (povertyPercentage <= 20) return "#feb24c";
-    if (povertyPercentage <= 25) return "#fd8d3c";
-    if (povertyPercentage <= 30) return "#fc4e2a";
-    if (povertyPercentage <= 35) return "#e31a1c";
-    if (povertyPercentage <= 40) return "#bd0026";
-    if (povertyPercentage <= 45) return "#800026";
-    if (povertyPercentage <= 50) return "#4d0000";
-    if (povertyPercentage <= 55) return "#3d0000";
-    if (povertyPercentage <= 60) return "#2e0000";
-    if (povertyPercentage <= 65) return "#1e0000";
-    if (povertyPercentage <= 70) return "#110000";
-    if (povertyPercentage <= 75) return "#0b0000";
-    if (povertyPercentage <= 80) return "#050000";
-    if (povertyPercentage <= 85) return "#040000";
-    if (povertyPercentage <= 90) return "#030000";
-    if (povertyPercentage <= 95) return "#020000";
-    return "#010000"; // 95% - 100%
+    if (povertyPercentage === undefined || povertyPercentage === null) return "#d9d9d9"; // No data
+  
+    // Transition from light yellow to dark red
+    const gradientStops = [
+      { percent: 1, color: [255, 255, 204] }, // Light yellow
+      { percent: 20, color: [255, 237, 160] }, // Yellowish
+      { percent: 40, color: [254, 178, 76] },  // Orange
+      { percent: 60, color: [252, 78, 42] },   // Red
+      { percent: 80, color: [227, 26, 28] },   // Dark red
+      { percent: 100, color: [153, 0, 13] },   // Very dark red
+    ];
+  
+    // Find the gradient stop range for the given percentage
+    for (let i = 0; i < gradientStops.length - 1; i++) {
+      const start = gradientStops[i];
+      const end = gradientStops[i + 1];
+      if (povertyPercentage <= end.percent) {
+        const ratio = (povertyPercentage - start.percent) / (end.percent - start.percent); // Normalize
+        const red = Math.round(start.color[0] + ratio * (end.color[0] - start.color[0]));
+        const green = Math.round(start.color[1] + ratio * (end.color[1] - start.color[1]));
+        const blue = Math.round(start.color[2] + ratio * (end.color[2] - start.color[2]));
+        return `rgb(${red}, ${green}, ${blue})`;
+      }
+    }
+  
+    return "#153001"; // Fallback for any undefined percentage > 100 (Very dark red)
   };
+  
+  
 
-  const Legend = () => (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
-      <h4 style={{ marginRight: "10px" }}>Poverty Levels:</h4>
-      <div style={{ display: "flex", gap: "5px" }}>
-        <div style={{ background: "#ffffcc", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>5%</span>
+  const Legend = () => {
+    // Define the gradient stops for the color bar
+    const gradient = [
+      "rgb(255, 255, 204)", // Light yellow (0%)
+      "rgb(255, 237, 160)", // Yellowish (20%)
+      "rgb(254, 178, 76)",  // Orange (40%)
+      "rgb(252, 78, 42)",   // Red (60%)
+      "rgb(227, 26, 28)",   // Dark red (80%)
+      "rgb(153, 0, 13)",    // Very dark red (100%)
+    ].join(",");
+  
+    // Positions for the percentage labels
+    const percentageLabels = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  
+    return (
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <h4>Poverty Levels (%):</h4>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "500px",
+            margin: "0 auto",
+            position: "relative",
+          }}
+        >
+          {/* Percentage labels */}
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
+            {percentageLabels.map((percentage) => (
+              <span
+                key={percentage}
+                style={{
+                  fontSize: "12px",
+                  fontWeight: "bold",
+                }}
+              >
+                {percentage}%
+              </span>
+            ))}
+          </div>
+          {/* Color gradient bar */}
+          <div
+            style={{
+              background: `linear-gradient(to right, ${gradient})`,
+              width: "100%",
+              height: "20px",
+              border: "1px solid #000",
+              borderRadius: "5px",
+            }}
+          ></div>
         </div>
-        <div style={{ background: "#ffeda0", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>10%</span>
-        </div>
-        <div style={{ background: "#fed976", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>15%</span>
-        </div>
-        <div style={{ background: "#feb24c", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>20%</span>
-        </div>
-        <div style={{ background: "#fd8d3c", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>25%</span>
-        </div>
-        <div style={{ background: "#fc4e2a", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>30%</span>
-        </div>
-        <div style={{ background: "#e31a1c", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>35%</span>
-        </div>
-        <div style={{ background: "#bd0026", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>40%</span>
-        </div>
-        <div style={{ background: "#800026", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>45%</span>
-        </div>
-        <div style={{ background: "#4d0000", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>50%</span>
-        </div>
-        <div style={{ background: "#d9d9d9", width: "40px", height: "40px", display: "flex", justifyContent: "center", alignItems: "center", border: "1px solid #000", borderRadius: "5px" }}>
-          <span style={{ fontSize: "12px", fontWeight: "bold" }}>No</span>
+        {/* No Data Box */}
+        <div style={{ marginTop: "10px" }}>
+          <span style={{ fontSize: "12px", fontWeight: "bold", color: "#555" }}>No Data:</span>
+          <div
+            style={{
+              display: "inline-block",
+              background: "#d9d9d9",
+              width: "30px",
+              height: "20px",
+              marginLeft: "5px",
+              border: "1px solid #000",
+              borderRadius: "3px",
+              verticalAlign: "middle",
+            }}
+          ></div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+  
+  
+  
+  
   
 
   const handleCountryClick = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
     const countryData = countriesInfo[countryName];
-    console.log(geo.properties);
-    if (countryData) {
-      const { povertyPercentage, year, info, references: countryReferences } = countryData;
+    const povertyPercentage = countryData?.[year];
+  
+    if (countryData && povertyPercentage !== null && povertyPercentage !== undefined) {
       setTooltipContent(
-        `Info about ${geo.properties.name}:\n
-         Poverty Rate: ${povertyPercentage || "No data"}% (${year || "Year not available"})\n
-         ${info || ""}`
+        `Poverty Rate of ${geo.properties.name} is ${povertyPercentage}% in ${year}`
       );
-      setReferences(countryReferences || []);
+      setReferences(countryData.references || []);
     } else {
-      setTooltipContent(`Info about ${geo.properties.name}: No data available.`);
+      setTooltipContent(`Info about ${geo.properties.name}: No data available for ${year}.`);
       setReferences([]);
     }
   };
+  
   
 
   return (
@@ -177,6 +216,20 @@ export default function MapChart() {
         }}
       >
         {hoverTooltip.content}
+      </div>
+
+      <div style={{ marginBottom: "10px" }}>
+        <label htmlFor="yearSlider">Select Year: {year}</label>
+        <input
+          id="yearSlider"
+          type="range"
+          min="1964"
+          max="2024"
+          value={year}
+          onChange={(e) => setYear(parseInt(e.target.value))}
+          step="1"
+          style={{ width: "80%" }}
+        />
       </div>
 
       <div>
