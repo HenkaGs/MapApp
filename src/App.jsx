@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import countriesInfo from "./countriesInfoNewest2.json";
 import "./App.css";
@@ -10,6 +10,12 @@ export default function MapChart() {
   const [tooltipContent, setTooltipContent] = useState("");
   const [hoverTooltip, setHoverTooltip] = useState({ content: "", x: 0, y: 0 });
   const [references, setReferences] = useState([]);
+
+  // Added: State to track if the animation is playing
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  // Added: A ref to store the interval ID so we can clear it later
+  const timerId = useRef(null);
 
   const getCountryStyle = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
@@ -27,7 +33,7 @@ export default function MapChart() {
     <div style={{ textAlign: "center", marginBottom: "20px" }}>
       <h1>Poverty Rate by Country</h1>
       <p style={{ fontSize: "14px", color: "#555" }}>
-      Extreme poverty is defined as living below the International Poverty Line of $2.15 per day. This data is adjusted for inflation and for differences in the cost of living between countries.
+        Extreme poverty is defined as living below the International Poverty Line of $2.15 per day. This data is adjusted for inflation and for differences in the cost of living between countries.
       </p>
     </div>
   );
@@ -35,15 +41,19 @@ export default function MapChart() {
   const Reference = () => (
     <div style={{ marginTop: "20px", textAlign: "center", fontSize: "12px", color: "#555" }}>
       <p>
-        Data Source: <a href="https://ourworldindata.org/poverty" target="_blank" rel="noopener noreferrer">https://ourworldindata.org/poverty</a>
+        Data Source: <a href="https://ourworldindata.org/poverty" target="_blank" rel="noopener noreferrer">World Bank Poverty and Inequality Platform (2024) – processed by Our World in Data. “Share below $2.15 a day” [dataset]. World Bank Poverty and Inequality Platform (2024) [original data].</a>
       </p>
       <p>
         Note: 
       </p>
-      <p style={{ fontStyle: "italic" }}>nooottia</p>
+      <p style={{ fontStyle: "italic" }}>Note: This data is expressed in international-$ at 2017 prices. Depending on the country and year, it relates to income measured after taxes and benefits, or to
+      consumption, per capita.</p>
     </div>
   );
   
+  
+
+
 
   const getCountryColor = (povertyPercentage) => {
     if (povertyPercentage === undefined || povertyPercentage === null) return "#d9d9d9"; // No data
@@ -58,7 +68,6 @@ export default function MapChart() {
       { percent: 100, color: [153, 0, 13] },   // Very dark red
     ];
   
-    // Find the gradient stop range for the given percentage
     for (let i = 0; i < gradientStops.length - 1; i++) {
       const start = gradientStops[i];
       const end = gradientStops[i + 1];
@@ -71,23 +80,25 @@ export default function MapChart() {
       }
     }
   
-    return "#153001"; // Fallback for any undefined percentage > 100 (Very dark red)
+    return "#153001"; // Fallback
   };
   
   
+  
+
+
+  
 
   const Legend = () => {
-    // Define the gradient stops for the color bar
     const gradient = [
-      "rgb(255, 255, 204)", // Light yellow (0%)
-      "rgb(255, 237, 160)", // Yellowish (20%)
-      "rgb(254, 178, 76)",  // Orange (40%)
-      "rgb(252, 78, 42)",   // Red (60%)
-      "rgb(227, 26, 28)",   // Dark red (80%)
-      "rgb(153, 0, 13)",    // Very dark red (100%)
+      "rgb(255, 255, 204)",
+      "rgb(255, 237, 160)",
+      "rgb(254, 178, 76)",
+      "rgb(252, 78, 42)",
+      "rgb(227, 26, 28)",
+      "rgb(153, 0, 13)",
     ].join(",");
   
-    // Positions for the percentage labels
     const percentageLabels = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
   
     return (
@@ -101,7 +112,6 @@ export default function MapChart() {
             position: "relative",
           }}
         >
-          {/* Percentage labels */}
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "5px" }}>
             {percentageLabels.map((percentage) => (
               <span
@@ -115,7 +125,6 @@ export default function MapChart() {
               </span>
             ))}
           </div>
-          {/* Color gradient bar */}
           <div
             style={{
               background: `linear-gradient(to right, ${gradient})`,
@@ -126,7 +135,6 @@ export default function MapChart() {
             }}
           ></div>
         </div>
-        {/* No Data Box */}
         <div style={{ marginTop: "10px" }}>
           <span style={{ fontSize: "12px", fontWeight: "bold", color: "#555" }}>No Data:</span>
           <div
@@ -145,11 +153,6 @@ export default function MapChart() {
       </div>
     );
   };
-  
-  
-  
-  
-  
 
   const handleCountryClick = (geo) => {
     const countryName = geo.properties.name.toLowerCase();
@@ -166,8 +169,46 @@ export default function MapChart() {
       setReferences([]);
     }
   };
-  
-  
+
+  // Added: function to start playing the animation
+  const startPlaying = () => {
+    setIsPlaying(true);
+    // Clear any existing interval (just safety)
+    if (timerId.current) {
+      clearInterval(timerId.current);
+    }
+    // Create a new interval that increments the year every 500ms
+    timerId.current = setInterval(() => {
+      setYear((prevYear) => {
+        if (prevYear >= 2024) {
+          // If we've reached the last year, stop playing
+          stopPlaying();
+          return prevYear;
+        }
+        return prevYear + 1;
+      });
+    }, 500);
+  };
+
+  // Added: function to stop the animation
+  const stopPlaying = () => {
+    setIsPlaying(false);
+    if (timerId.current) {
+      clearInterval(timerId.current);
+      timerId.current = null;
+    }
+  };
+
+  // Added: Handle play/pause button click
+  const handlePlayPause = () => {
+    if (isPlaying) {
+      // If currently playing, pause it
+      stopPlaying();
+    } else {
+      // If currently stopped, start playing
+      startPlaying();
+    }
+  };
 
   return (
     <div style={{ width: "100%", maxWidth: "900px", margin: "0 auto" }}>
@@ -218,20 +259,33 @@ export default function MapChart() {
         {hoverTooltip.content}
       </div>
 
+      {/* Year Slider */}
       <div style={{ marginBottom: "10px" }}>
-        <label htmlFor="yearSlider">Select Year: {year}</label>
+        <label htmlFor="yearSlider">Selected Year: {year}</label>
         <input
           id="yearSlider"
           type="range"
           min="1964"
           max="2024"
           value={year}
-          onChange={(e) => setYear(parseInt(e.target.value))}
+          onChange={(e) => {
+            // If user manually changes year, stop animation
+            if (isPlaying) stopPlaying();
+            setYear(parseInt(e.target.value));
+          }}
           step="1"
           style={{ width: "80%" }}
         />
       </div>
 
+      {/* Added: Play/Pause Button */}
+      <div style={{ marginBottom: "10px" }}>
+        <button onClick={handlePlayPause}>
+          {isPlaying ? "Pause" : "Play Animation"}
+        </button>
+      </div>
+
+      {/* References */}
       <div>
         {references.length > 0 && (
           <div style={{ marginTop: "20px" }}>
