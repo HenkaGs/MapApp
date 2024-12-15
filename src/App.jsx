@@ -11,10 +11,8 @@ export default function MapChart() {
   const [hoverTooltip, setHoverTooltip] = useState({ content: "", x: 0, y: 0 });
   const [references, setReferences] = useState([]);
 
-  // Added: State to track if the animation is playing
   const [isPlaying, setIsPlaying] = useState(false);
 
-  // Added: A ref to store the interval ID so we can clear it later
   const timerId = useRef(null);
 
   const getCountryStyle = (geo) => {
@@ -50,29 +48,24 @@ export default function MapChart() {
       consumption, per capita.</p>
     </div>
   );
-  
-  
-
-
 
   const getCountryColor = (povertyPercentage) => {
-    if (povertyPercentage === undefined || povertyPercentage === null) return "#d9d9d9"; // No data
+    if (povertyPercentage === undefined || povertyPercentage === null) return "#d9d9d9";
   
-    // Transition from light yellow to dark red
     const gradientStops = [
-      { percent: 1, color: [255, 255, 204] }, // Light yellow
-      { percent: 20, color: [255, 237, 160] }, // Yellowish
-      { percent: 40, color: [254, 178, 76] },  // Orange
-      { percent: 60, color: [252, 78, 42] },   // Red
-      { percent: 80, color: [227, 26, 28] },   // Dark red
-      { percent: 100, color: [153, 0, 13] },   // Very dark red
+      { percent: 1, color: [255, 255, 204] },
+      { percent: 20, color: [255, 237, 160] },
+      { percent: 40, color: [254, 178, 76] },
+      { percent: 60, color: [252, 78, 42] },
+      { percent: 80, color: [227, 26, 28] },
+      { percent: 100, color: [153, 0, 13] },
     ];
   
     for (let i = 0; i < gradientStops.length - 1; i++) {
       const start = gradientStops[i];
       const end = gradientStops[i + 1];
       if (povertyPercentage <= end.percent) {
-        const ratio = (povertyPercentage - start.percent) / (end.percent - start.percent); // Normalize
+        const ratio = (povertyPercentage - start.percent) / (end.percent - start.percent);
         const red = Math.round(start.color[0] + ratio * (end.color[0] - start.color[0]));
         const green = Math.round(start.color[1] + ratio * (end.color[1] - start.color[1]));
         const blue = Math.round(start.color[2] + ratio * (end.color[2] - start.color[2]));
@@ -80,14 +73,8 @@ export default function MapChart() {
       }
     }
   
-    return "#153001"; // Fallback
+    return "#153001";
   };
-  
-  
-  
-
-
-  
 
   const Legend = () => {
     const gradient = [
@@ -170,18 +157,17 @@ export default function MapChart() {
     }
   };
 
-  // Added: function to start playing the animation
   const startPlaying = () => {
     setIsPlaying(true);
-    // Clear any existing interval (just safety)
+
     if (timerId.current) {
       clearInterval(timerId.current);
     }
-    // Create a new interval that increments the year every 500ms
+
     timerId.current = setInterval(() => {
       setYear((prevYear) => {
         if (prevYear >= 2024) {
-          // If we've reached the last year, stop playing
+
           stopPlaying();
           return prevYear;
         }
@@ -190,7 +176,7 @@ export default function MapChart() {
     }, 500);
   };
 
-  // Added: function to stop the animation
+
   const stopPlaying = () => {
     setIsPlaying(false);
     if (timerId.current) {
@@ -199,13 +185,13 @@ export default function MapChart() {
     }
   };
 
-  // Added: Handle play/pause button click
+
   const handlePlayPause = () => {
     if (isPlaying) {
-      // If currently playing, pause it
+
       stopPlaying();
     } else {
-      // If currently stopped, start playing
+
       startPlaying();
     }
   };
@@ -269,7 +255,7 @@ export default function MapChart() {
           max="2024"
           value={year}
           onChange={(e) => {
-            // If user manually changes year, stop animation
+
             if (isPlaying) stopPlaying();
             setYear(parseInt(e.target.value));
           }}

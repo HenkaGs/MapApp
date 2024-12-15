@@ -2,7 +2,7 @@
   geography="/map-file.json"
   parseGeographies={(geos) => {
     return geos.map((g) => {
-      // Process geographies here...
+
       return g
     })
   }}
