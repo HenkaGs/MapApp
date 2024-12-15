@@ -264,7 +264,7 @@ export default function MapChart() {
         />
       </div>
 
-      {/* Added: Play/Pause Button */}
+      {/* Play/Pause Button */}
       <div style={{ marginBottom: "10px" }}>
         <button onClick={handlePlayPause}>
           {isPlaying ? "Pause" : "Play Animation"}
